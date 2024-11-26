@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shubham Kumar's Portfolio">
+  <title>Shubham Kumar - Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Header Section */
+    header {
+      background: url('/mnt/data/matrix-style-binary-code-digital-falling-numbers-blue-background_1017-37387.avif') center/cover no-repeat;
+      color: rgb(141, 32, 32);
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(16, 154, 172, 0.49); /* Optional: adds overlay for better text visibility */
+      z-index: -1;
+    }
+
+    nav {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: #76b02e;
+      border-radius: 5px;
+    }
+
+    .header-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(to right, #f0a500, #352a7f);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .header-content p {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(146, 219, 30, 0.4);
+    }
+
+    .header-content .btn {
+      background: #f0a500;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header-content .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 5px 15px rgba(89, 12, 177, 0.6);
+    }
+
+    section {
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #b1f80b;
+      position: relative;
+      text-shadow: 3px 3px 6px rgba(29, 147, 197, 0.3);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #d0af2b, #d3360f);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    section h2::after {
+      content: "";
+      width: 100px;
+      height: 3px;
+      background: #7de606;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 5px;
+    }
+
+    /* Contact Section */
+    #contact {
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      color: white;
+      padding: 70px 20px;
+      text-align: center;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+
+    .contact-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      color: #621818;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 10px 20px rgba(129, 53, 53, 0.2);
+    }
+
+    .contact-card i {
+      font-size: 3rem;
+      color: #1e3c72;
+      margin-bottom: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .contact-card a {
+      color: #1e3c72;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .contact-card a:hover {
+      color: #e6ac2f;
+    }
+
+    .contact-card p {
+      margin: 10px 0;
+      font-size: 1rem;
+      color: #1184a4;
+    }
+
+    .contact-form {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(248, 49, 49, 0.1);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #4bd98b;
+      outline: none;
+      box-shadow: 0px 0px 5px rgba(46, 192, 114, 0.6);
+    }
+
+    .contact-form button {
+      background: #1e3c72;
+      color: white;
+      padding: 15px 25px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #2a5298;
+      transform: translateY(-5px);
+    }
+
+    footer {
+      background: #2a5298;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+  </style>
+</head>
+<body>
+  <header id="home">
+    <nav>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-content">
+      <h1>Hi, I'm <span class="highlight">Shubham Kumar</span></h1>
+      <p>Cybersecurity Expert & Web Developer</p>
+      <a href="#contact" class="btn">Hire Me</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <img src="c:\Users\DELL\OneDrive\Pictures\Camera Roll 1\IMG_20230407_094657.jpg" alt="Shubham Kumar" style="width: 150px; height: 150px; border-radius: 50%;"> <div>
+        <p>Hello! 👋 I'm **Shubham Kumar**, a passionate **Cybersecurity Expert** and **Web Developer** dedicated to crafting **secure**, **innovative**, and **user-friendly** digital experiences. 🚀  
+
+            With a strong foundation in **Cyber Defense** and **Modern Web Technologies**, I specialize in:  
+            🔒 **Cybersecurity**: **Threat Analysis**, **Automated Security Solutions**, and **Robust Incident Response**.  
+            💻 **Web Development**: Building **Responsive**, **High-Performance Websites** with sleek, **Modern Designs**.  
+            
+            Certified in **CompTIA Security+**, **AWS Security**, and more, I thrive on solving **complex challenges** and staying ahead of **tech trends**. Let's create something **extraordinary** together! 💡  
+        <p><b>Education:</b> Bachelor of Technology (B.Tech), Computer Science - Lovely Professional University, July 2022 - December 2026</p>
+        <p><b>Certifications:</b> CompTIA Security+, AWS Certified Security - Specialty, Google Cybersecurity Specialization, and many more.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects & Contributions</h2>
+    <div class="projects-container">
+      <div class="project">
+        <h3>1. ShopEase - E-Commerce Webpage</h3>
+        <p>Interactive e-commerce webpage with a clean and modern design featuring categories, subcategories, and responsive layouts.</p>
+        <p><b>Key Features:</b> User-friendly signup form, interactive navigation, and polished footer.</p>
+        <p><b>Tech Stack:</b> HTML, CSS, JavaScript.</p>
+        <p><a href="https://github.com/Shubhamm2444/E-commerce/tree/main" target="_blank">View GitHub Repository</a></p>
+      </div>
+      <div class="project">
+        <h3>2. Security Automation with Python</h3>
+        <p>Automated scanning, log analysis, and vulnerability patching with Python scripts to enhance security posture.</p>
+      </div>
+      <div class="project">
+        <h3>3. Threat Detection and Analysis</h3>
+        <p>Real-time AI-driven analysis of network traffic and user behavior to identify intrusions and mitigate attacks.</p>
+      </div>
+      <div class="project">
+        <h3>4. MFA-SIAM</h3>
+        <p>Combining Multi-Factor Authentication with Security Information and Event Management for layered security solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="certifications-container">
+      <div class="certification">
+        <h3>CompTIA Security+</h3>
+        <p>April 2024</p>
+      </div>
+      <div class="certification">
+        <h3>CompTIA Linux+</h3>
+        <p>March 2024</p>
+      </div>
+      <div class="certification">
+        <h3>AWS Certified Security - Specialty</h3>
+        <p>April 2024</p>
+      </div>
+      <div class="certification">
+        <h3>Google Cybersecurity Specialization</h3>
+        <p>April 2024</p>
+      </div>
+      <div class="certification">
+        <h3>IBM Cybersecurity Essentials</h3>
+        <p>February 2024</p>
+      </div>
+      <div class="certification">
+        <h3>Microsoft Cybersecurity Analyst</h3>
+        <p>May 2024</p>
+      </div>
+      <div class="certification">
+        <h3>Tata Group Cybersecurity Job Simulation</h3>
+        <p>April 2024</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    
+    <!-- Contact Info Cards -->
+    <div class="contact-info">
+      <!-- Phone Contact -->
+      <div class="contact-card">
+        <i class="fas fa-phone-alt"></i>
+        <p><strong>Phone:</strong> 9557783358</p>
+        <a href="tel:+919557783358">Call Me</a>
+      </div>
+
+      <!-- Email Contact -->
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <p><strong>Email:</strong> <a href="mailto:Ishubhamsingh2483@gmail.com">Ishubhamsingh2483@gmail.com</a></p>
+      </div>
+
+      <!-- LinkedIn Contact -->
+      <div class="contact-card">
+        <i class="fab fa-linkedin"></i>
+        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/shubham-kumar" target="_blank">linkedin.com/in/shubham-kumar</a></p>
+      </div>
+
+      <!-- GitHub Contact -->
+      <div class="contact-card">
+        <i class="fab fa-github"></i>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Shubhamm2444" target="_blank">github.com/Shubhamm2444</a></p>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <form action="mailto:Ishubhamsingh2483@gmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Shubham Kumar. All rights reserved.</p>
+  </footer>
+
+  <!-- FontAwesome CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+</html>
